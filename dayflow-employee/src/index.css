@@ -1,0 +1,70 @@
+/* src/index.css
+   Dayflow design tokens.
+
+   Palette:
+     --df-primary  #2B2E6B  Ink Indigo — primary actions, headings accent
+     --df-accent   #F4A340  Dawn Amber — the punch-clock CTA
+     --df-bg       #F5F6FA  Soft, cool background (not the common warm-cream default)
+     --df-border   #E4E6F1
+     --df-text     #1B1D3A
+     --df-text-soft #5B5F82
+
+   Type:
+     Display — Space Grotesk (geometric, used with restraint for headings)
+     Body    — Inter
+     Mono    — JetBrains Mono (dates, employee IDs — reinforces "alignment/precision")
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --df-primary: #2b2e6b;
+  --df-accent: #f4a340;
+  --df-bg: #f5f6fa;
+  --df-border: #e4e6f1;
+  --df-text: #1b1d3a;
+  --df-text-soft: #5b5f82;
+  --df-font-display: "Space Grotesk", "Inter", sans-serif;
+}
+
+html,
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: var(--df-text);
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.df-input {
+  width: 100%;
+  border: 1px solid var(--df-border);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  background: white;
+  color: var(--df-text);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.df-input:focus {
+  border-color: var(--df-primary);
+  box-shadow: 0 0 0 3px rgba(43, 46, 107, 0.12);
+}
+
+/* Respect reduced-motion preferences across the app */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
