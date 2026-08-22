@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Attendance from "./pages/Attendance";
 import Leave from "./pages/Leave";
+import AdminLeave from "./pages/AdminLeave";
 
 export default function App() {
   return (
@@ -47,6 +48,15 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <Leave />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/admin-leave"
+            element={
+              <ProtectedRoute>
+                <AdminLeave />
               </ProtectedRoute>
             }
           />
